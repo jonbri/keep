@@ -37,13 +37,13 @@ jobs:
       - name: Move
         run: mv dist/* .
       - name: Sed
-        run: sed -i 's/\/assets/.\/assets/g' index.html
+        run: sed -i 's/\/keep\/assets/.\/assets/g' index.html
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          path: '.'
+          path: "."
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
