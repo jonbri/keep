@@ -13,7 +13,7 @@ export interface AppProps {
 const App = ({ dates, upcoming }: AppProps) => (
   <div>
     <h3>
-      <a href="./">{moment().format("MMMM DD, YYYY")}</a>
+      <a href="./">{moment().format("MMMM D, YYYY")}</a>
     </h3>
     <h4 className="soon">{upcoming}</h4>
     <table>
