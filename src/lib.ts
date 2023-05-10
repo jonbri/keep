@@ -6,8 +6,7 @@ const getFormattedDateDiff = (date1: string, date2: string) => {
   const b = moment(date1);
   const a = moment(date2);
   const out: string[] = [];
-  const singularize = (s: string, num: number) =>
-    s.slice(0, num === 1 ? -1 : s.length);
+  const singularize = (s: string, num: number) => s.slice(0, num === 1 ? -1 : s.length);
   const intervals: unitOfTime.Diff[] = ["years", "months"];
   intervals.forEach((interval) => {
     const diff = a.diff(b, interval);

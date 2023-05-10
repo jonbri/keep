@@ -18,60 +18,36 @@ const App = ({ dates, upcoming }: AppProps) => (
     <h4 className="soon">{upcoming}</h4>
     <table>
       <tbody>
-        {dates.map(
-          ({
-            name,
-            death,
-            hide,
-            formattedAge,
-            birthday,
-            daysUntilBirthday,
-          }) => {
-            let rowColor = "";
-            if (death) rowColor = "passedAway";
-            else if (hide) rowColor = "hide";
-            const [, month, date] = birthday.split("-");
-            return !death &&
-              nowMonth === parseInt(month) &&
-              nowDate === parseInt(date) ? (
-              <tr
-                className={rowColor ? `${rowColor} today` : "today"}
-                key={name}
+        {dates.map(({ name, death, hide, formattedAge, birthday, daysUntilBirthday }) => {
+          let rowColor = "";
+          if (death) rowColor = "passedAway";
+          else if (hide) rowColor = "hide";
+          const [, month, date] = birthday.split("-");
+          return !death && nowMonth === parseInt(month) && nowDate === parseInt(date) ? (
+            <tr className={rowColor ? `${rowColor} today` : "today"} key={name}>
+              <td colSpan={2}>{`${formattedAge.replace(/[^\d]+/, "")} ${name.toUpperCase()}`}</td>
+              <td
+                style={{
+                  fontSize: "16px",
+                }}
               >
-                <td colSpan={2}>
-                  {`${formattedAge.replace(
-                    /[^\d]+/,
-                    ""
-                  )} ${name.toUpperCase()}`}
-                </td>
-                <td
-                  style={{
-                    fontSize: "16px",
-                  }}
-                >
-                  {birthday}
-                </td>
-                <td></td>
-              </tr>
-            ) : (
-              <tr className={rowColor} key={name}>
-                <td>{name}</td>
-                <td colSpan={death ? 3 : 1}>
-                  {death
-                    ? `${formattedAge.replace(
-                        /([\d]+).*$/,
-                        "$1"
-                      )} (${birthday} - ${death})`
-                    : formattedAge
-                        .replace(" months", "mo")
-                        .replace(" years", "y")}
-                </td>
-                {death ? null : <td>{birthday}</td>}
-                {death ? null : <td>{`(-${daysUntilBirthday})`}</td>}
-              </tr>
-            );
-          }
-        )}
+                {birthday}
+              </td>
+              <td></td>
+            </tr>
+          ) : (
+            <tr className={rowColor} key={name}>
+              <td>{name}</td>
+              <td colSpan={death ? 3 : 1}>
+                {death
+                  ? `${formattedAge.replace(/([\d]+).*$/, "$1")} (${birthday} - ${death})`
+                  : formattedAge.replace(" months", "mo").replace(" years", "y")}
+              </td>
+              {death ? null : <td>{birthday}</td>}
+              {death ? null : <td>{`(-${daysUntilBirthday})`}</td>}
+            </tr>
+          );
+        })}
       </tbody>
     </table>
   </div>
