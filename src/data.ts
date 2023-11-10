@@ -91,10 +91,12 @@ const data: RawItem[] = [
   {
     name: "Ashley",
     birthday: "1988-11-10",
+    hide: true,
   },
   {
     name: "Alex",
     birthday: "1986-06-17",
+    hide: true,
   },
   {
     name: "Jacob",
@@ -107,10 +109,12 @@ const data: RawItem[] = [
   {
     name: "Sherry",
     birthday: "1963-11-23",
+    hide: true,
   },
   {
-    name: "DB",
+    name: "ZD",
     birthday: "1962-04-09",
+    hide: true,
   },
   {
     name: "Michael",
@@ -159,14 +163,6 @@ const data: RawItem[] = [
   {
     name: "Sarah",
     birthday: "1981-03-14",
-  },
-  {
-    name: "Angela",
-    birthday: "1982-10-25",
-  },
-  {
-    name: "Lucas",
-    birthday: "2002-02-12",
   },
   {
     name: "Sol",
