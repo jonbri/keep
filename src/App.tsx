@@ -11,7 +11,6 @@ export interface AppProps {
   upcoming: string;
 }
 const App = ({ dates, upcoming }: AppProps) => {
-  const sortedDates = dates.sort((d0) => (d0.hide ? 1 : -1));
   return (
     <div>
       <h3>
@@ -20,7 +19,7 @@ const App = ({ dates, upcoming }: AppProps) => {
       <h4 className="soon">{upcoming}</h4>
       <table>
         <tbody>
-          {sortedDates.map(({ name, death, hide, formattedAge, birthday, daysUntilBirthday }) => {
+          {dates.map(({ name, death, hide, formattedAge, birthday, daysUntilBirthday }) => {
             let rowColor = "";
             if (death) rowColor = "passedAway";
             else if (hide) rowColor = "hide";
