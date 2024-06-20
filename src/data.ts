@@ -91,12 +91,10 @@ const data: RawItem[] = [
   {
     name: "Ashley",
     birthday: "1988-11-10",
-    hide: true,
   },
   {
     name: "Alex",
     birthday: "1986-06-17",
-    hide: true,
   },
   {
     name: "Jacob",
