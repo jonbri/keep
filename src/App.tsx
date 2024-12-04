@@ -51,8 +51,40 @@ const App = ({ dates, upcoming }: AppProps) => {
           })}
         </tbody>
       </table>
+
+      <br />
+      <div>
+        <h4>Office</h4>
+        <table>
+          <tbody>
+            {office.map(([date, present, total]) => (
+              <tr>
+                <td>{date}</td>
+                <td>{`${present}/${total}`}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        <div>
+          <strong>{`Total: ${totalInOffice}/${totalOffice} (${inOfficePercentage})`}</strong>
+        </div>
+        <div>
+          <strong>{`Average days per week: ${averageDaysPerWeekInOffice} / 5`}</strong>
+        </div>
+      </div>
     </div>
   );
 };
+
+type OfficeMonth = [string, number, number];
+const office: OfficeMonth[] = [
+  ["Oct 2024", 10, 23],
+  ["Nov 2024", 10, 19],
+];
+const totalInOffice = office.reduce((acc, [, present]) => acc + present, 0);
+const totalOffice = office.reduce((acc, [, , total]) => acc + total, 0);
+const inOfficePercentageValue = (totalInOffice / totalOffice) * 100;
+const inOfficePercentage = `${inOfficePercentageValue.toFixed(1)}%`;
+const averageDaysPerWeekInOffice = ((5 * inOfficePercentageValue) / 100).toFixed(1);
 
 export default App;
