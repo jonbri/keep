@@ -88,3 +88,25 @@ table td:first-child {
 .upcoming {
   margin: 10px 0;
 }
+
+#office {
+  table {
+    thead {
+      tr {
+        background-color: white;
+        border-bottom: 1px solid black;
+      }
+      th {
+        padding: 5px;
+      }
+    }
+    tr,
+    td {
+      text-align: center;
+    }
+
+    .totals {
+      border-top: 1px solid black;
+    }
+  }
+}
