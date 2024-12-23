@@ -90,6 +90,7 @@ type OfficeMonth = [string, number, number];
 const office: OfficeMonth[] = [
   ["Oct 2024", 10, 23],
   ["Nov 2024", 10, 19],
+  ["Dec 2024", 10, 15],
 ];
 const totalInOffice = office.reduce((acc, [, present]) => acc + present, 0);
 const totalOffice = office.reduce((acc, [, , total]) => acc + total, 0);
