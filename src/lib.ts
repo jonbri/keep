@@ -1,6 +1,6 @@
 import moment, { unitOfTime } from "moment";
 import { RawItem } from "./types";
-import data from "./data";
+import { birthdays } from "./data";
 
 const getFormattedDateDiff = (date1: string, date2: string) => {
   const b = moment(date1);
@@ -20,7 +20,7 @@ const getDayOfYear = (m: string) => parseInt(moment(m).format("DDD"));
 const currentYear = new Date().getFullYear().toString();
 
 const numberOfUpcoming = 4;
-const dates = data.map((item: RawItem) => {
+const dates = birthdays.map((item: RawItem) => {
   const now = moment().toString();
   const { birthday, death } = item;
   const formattedAge = death

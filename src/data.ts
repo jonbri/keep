@@ -1,6 +1,6 @@
 import { RawItem } from "./types";
 
-const data: RawItem[] = [
+export const birthdays: RawItem[] = [
   {
     name: "Tracy",
     birthday: "1983-07-07",
@@ -187,4 +187,3 @@ const data: RawItem[] = [
     hide: true,
   },
 ];
-export default data;
