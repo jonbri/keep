@@ -9,5 +9,3 @@ export interface Item extends RawItem {
   formattedAge: string;
   daysUntilBirthday: number;
 }
-
-export type OfficeMonth = [string, number, number];
