@@ -1,4 +1,4 @@
-import { RawItem } from "./types";
+import { OfficeMonth, RawItem } from "./types";
 
 export const birthdays: RawItem[] = [
   {
@@ -186,4 +186,10 @@ export const birthdays: RawItem[] = [
     birthday: "1962-04-09",
     hide: true,
   },
+];
+
+export const attendance: OfficeMonth[] = [
+  ["Oct 2024", 10, 23],
+  ["Nov 2024", 10, 19],
+  ["Dec 2024", 10, 15],
 ];

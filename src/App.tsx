@@ -1,6 +1,7 @@
 import moment from "moment";
 import { Item } from "./types";
 import "./App.scss";
+import { attendance } from "./data";
 
 const now = new Date();
 const nowMonth = now.getMonth() + 1;
@@ -65,7 +66,7 @@ const App = ({ dates, upcoming }: AppProps) => {
             </tr>
           </thead>
           <tbody>
-            {office.map(([date, present, total]) => (
+            {attendance.map(([date, present, total]) => (
               <tr>
                 <td>{date}</td>
                 <td>{`${present} / ${total}`}</td>
@@ -86,14 +87,8 @@ const App = ({ dates, upcoming }: AppProps) => {
   );
 };
 
-type OfficeMonth = [string, number, number];
-const office: OfficeMonth[] = [
-  ["Oct 2024", 10, 23],
-  ["Nov 2024", 10, 19],
-  ["Dec 2024", 10, 15],
-];
-const totalInOffice = office.reduce((acc, [, present]) => acc + present, 0);
-const totalOffice = office.reduce((acc, [, , total]) => acc + total, 0);
+const totalInOffice = attendance.reduce((acc, [, present]) => acc + present, 0);
+const totalOffice = attendance.reduce((acc, [, , total]) => acc + total, 0);
 const inOfficePercentageValue = (totalInOffice / totalOffice) * 100;
 const inOfficePercentage = `${inOfficePercentageValue.toFixed(1)}%`;
 const averageDaysPerWeekInOffice = ((5 * inOfficePercentageValue) / 100).toFixed(1);
