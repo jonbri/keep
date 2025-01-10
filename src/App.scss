@@ -1,11 +1,14 @@
-/* Colors:
-  #B6D084 - Background color
-  #F8FFCA - Alternate row color
-  #2F7604 - Birthday colors
-*/
+$bg: #b6d084;
+$alt: #f8ffca;
+$birthday: #2f7604;
+$white: #fff;
+$black: #000;
+$gray: gray;
+$darkblue: #0000ff;
+$red: #ff0000;
 
 body {
-  background-color: #b6d084;
+  background-color: $bg;
   font-family: arial;
   color: black;
   font-size: 14px;
@@ -20,9 +23,9 @@ a:active {
 }
 
 .today {
-  color: #2f7604;
+  color: $birthday;
   font-size: 20px;
-  border-left: 4px solid #2f7604;
+  border-left: 4px solid $birthday;
 }
 
 pre,
@@ -35,6 +38,7 @@ h4 {
 
 h4 {
   font-size: 14px;
+  font-weight: bold;
 }
 
 h3 {
@@ -52,12 +56,12 @@ ul {
 }
 
 tr:nth-child(odd) {
-  background-color: #f8ffca;
+  background-color: $alt;
 }
 
 table {
   border-collapse: collapse;
-  border: 1px solid gray;
+  border: 1px solid $gray;
 }
 table td {
   padding: 5px 3px;
@@ -78,7 +82,7 @@ table td:first-child {
 }
 
 .soon {
-  color: darkblue;
+  color: $darkblue;
   font-size: 12px;
 }
 .soon span {
@@ -93,8 +97,8 @@ table td:first-child {
   table {
     thead {
       tr {
-        background-color: white;
-        border-bottom: 1px solid black;
+        background-color: $white;
+        border-bottom: 1px solid $black;
       }
       th {
         padding: 5px;
@@ -106,7 +110,22 @@ table td:first-child {
     }
 
     .totals {
-      border-top: 1px solid black;
+      border-top: 1px solid $black;
+      background-color: $white;
+      font-size: 1.1em;
+      td {
+        padding: 10px;
+      }
+      > td:last-child {
+        font-weight: bold;
+        font-size: 1.2em;
+        &.good {
+          color: $birthday;
+        }
+        &.bad {
+          color: $red;
+        }
+      }
     }
   }
 }

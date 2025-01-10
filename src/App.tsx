@@ -55,7 +55,7 @@ const App = ({ dates, upcoming }: AppProps) => {
 
       <br />
       <div id="office">
-        <h4>Office</h4>
+        <h4>Office Attendance</h4>
         <table>
           <thead>
             <tr>
@@ -78,7 +78,9 @@ const App = ({ dates, upcoming }: AppProps) => {
               <td>Total</td>
               <td>{`${totalInOffice} / ${totalOffice}`}</td>
               <td>{inOfficePercentage}</td>
-              <td>{averageDaysPerWeekInOffice}</td>
+              <td className={parseInt(averageDaysPerWeekInOffice) >= 3 ? "good" : "bad"}>
+                {averageDaysPerWeekInOffice}
+              </td>
             </tr>
           </tbody>
         </table>
