@@ -30,6 +30,10 @@ export const birthdays: RawItem[] = [
     birthday: "1955-02-07",
   },
   {
+    name: "Stella",
+    birthday: "2024-11-17",
+  },
+  {
     name: "Hadd",
     birthday: "2019-06-28",
   },
